@@ -399,6 +399,10 @@ STEPPER_CURRENT_CONTROL
 #define BEEPER_TYPE        1
 
 
+#define E1_PINS E1_STEP_PIN,E1_DIR_PIN,E1_ENABLE_PIN,
+#define E2_PINS E2_STEP_PIN,E2_DIR_PIN,E2_ENABLE_PIN,
+#define E3_PINS E3_STEP_PIN,E3_DIR_PIN,E3_ENABLE_PIN,
+
 #endif
 #endif
 
@@ -446,7 +450,7 @@ STEPPER_CURRENT_CONTROL
 #define LED_PIN            13
 
 #define FAN_PIN            7
-//additional FAN1 PIN (e.g. useful for electronics fan or light on/off) on PIN 8
+#define FAN1 PIN  8 // (e.g. useful for electronics fan or light on/off) on PIN 8
 
 #define PS_ON_PIN          45
 #define KILL_PIN           46
@@ -994,8 +998,8 @@ STEPPER_CURRENT_CONTROL
 #ifndef SDSUPPORT
 // these pins are defined in the SD library if building with SD support
 #define SCK_PIN          21
-#define MISO_PIN         22
-#define MOSI_PIN         23
+#define MISO_PIN         23
+#define MOSI_PIN         22
 #endif
 
 #endif
@@ -1051,8 +1055,8 @@ STEPPER_CURRENT_CONTROL
 #ifndef SDSUPPORT
 // these pins are defined in the SD library if building with SD support
 #define SCK_PIN          21
-#define MISO_PIN         22
-#define MOSI_PIN         23
+#define MISO_PIN         23
+#define MOSI_PIN         22
 #endif
 
 #endif
