@@ -91,7 +91,8 @@ is a full cartesian system where x, y and z moves are handled by separate motors
 1 = z axis + xy H-gantry (x_motor = x+y, y_motor = x-y)
 2 = z axis + xy H-gantry (x_motor = x+y, y_motor = y-x)
 3 = Delta printers (Rostock, Kossel, RostockMax, Cerberus, etc)
-4 = Tuga printer
+4 = Tuga printer (Scott-Russell mechanism)
+5 = Bipod system (not implemented)
 Cases 1 and 2 cover all needed xy H gantry systems. If you get results mirrored etc. you can swap motor connections for x and y.
 If a motor turns in the wrong direction change INVERT_X_DIR or INVERT_Y_DIR.
 */
@@ -644,7 +645,8 @@ Value is used for all generic tables created. */
 Heat manager for heated bed:
 0 = Bang Bang, fast update
 1 = PID controlled
-2 = Bang Bang, limited check every HEATED_BED_SET_INTERVAL. Use this with relay-driven beds to save life
+2 = Bang Bang, limited check every HEATED_BED_SET_INTERVAL. Use this with relay-driven beds to save life time
+3 = dead time control
 */
 #define HEATED_BED_HEAT_MANAGER 1
 /** \brief The maximum value, I-gain can contribute to the output.
@@ -818,16 +820,17 @@ on this endstop.
 #define MOTOR_CURRENT {35713,35713,35713,35713,35713} // Values 0-65535 (3D Master 35713 = ~1A)
 #endif
 
+/** \brief Number of segments to generate for delta conversions per second of move
+*/
+#define DELTA_SEGMENTS_PER_SECOND_PRINT 180 // Move accurate setting for print moves
+#define DELTA_SEGMENTS_PER_SECOND_MOVE 70 // Less accurate setting for other moves
+
 // Delta settings
 #if DRIVE_SYSTEM==3
 /** \brief Delta rod length
 */
 #define DELTA_DIAGONAL_ROD 455 // mm
 
-/** \brief Number of segments to generate for delta conversions per second of move
-*/
-#define DELTA_SEGMENTS_PER_SECOND_PRINT 180 // Move accurate setting for print moves
-#define DELTA_SEGMENTS_PER_SECOND_MOVE 70 // Less accurate setting for other moves
 
 /*  =========== Parameter essential for delta calibration ===================
 
@@ -897,7 +900,7 @@ you can also change the values online and auleveling will store the results here
 #endif
 #if DRIVE_SYSTEM == 4 // ========== Tuga special settings =============
 /* Radius of the long arm in mm. */
-#define DELTA_RADIUS 250
+#define DELTA_DIAGONAL_ROD 240
 #endif
 
 /** \brief Number of delta moves in each line. Moves that exceed this figure will be split into multiple lines.
@@ -1204,7 +1207,7 @@ is always running and is not hung up for some unknown reason. */
 // This is needful if you have the probe trigger by hand.
 #define Z_PROBE_WAIT_BEFORE_TEST false
 /** Speed of z-axis in mm/s when probing */
-#define Z_PROBE_SPEED 25
+#define Z_PROBE_SPEED 15
 #define Z_PROBE_XY_SPEED 25
 /** The height is the difference between activated probe position and nozzle height. */
 #define Z_PROBE_HEIGHT 4.9
