@@ -312,7 +312,7 @@ STEPPER_CURRENT_CONTROL
 #endif
 
 // uncomment one of the following lines for RAMPS v1.3 or v1.0, comment both for v1.2 or 1.1
-// #define RAMPS_V_1_3
+#define RAMPS_V_1_3
 // #define RAMPS_V_1_0
 
 #ifdef RAMPS_V_1_3
@@ -320,20 +320,20 @@ STEPPER_CURRENT_CONTROL
 #define X_STEP_PIN         54
 #define X_DIR_PIN          55
 #define X_ENABLE_PIN       38
-#define X_MIN_PIN          3
-#define X_MAX_PIN          2
+#define X_MIN_PIN          -1
+#define X_MAX_PIN          3
 
 #define Y_STEP_PIN         60
 #define Y_DIR_PIN          61
 #define Y_ENABLE_PIN       56
-#define Y_MIN_PIN          14
-#define Y_MAX_PIN          15
+#define Y_MIN_PIN          -1
+#define Y_MAX_PIN          14
 
 #define Z_STEP_PIN         46
 #define Z_DIR_PIN          48
 #define Z_ENABLE_PIN       62
-#define Z_MIN_PIN          18
-#define Z_MAX_PIN          19
+#define Z_MIN_PIN          19
+#define Z_MAX_PIN          18
 
 #define E0_STEP_PIN         26
 #define E0_DIR_PIN          28
@@ -343,74 +343,41 @@ STEPPER_CURRENT_CONTROL
 #define E1_DIR_PIN          34
 #define E1_ENABLE_PIN       30
 
+#define E2_STEP_PIN         27  // Only available with X3 shield
+#define E2_DIR_PIN          29  // Only available with X3 shield
+#define E2_ENABLE_PIN       41  // Only available with X3 shield
+
+//#define E3_STEP_PIN         23  // Only available with X3 shield
+//#define E3_DIR_PIN          25  // Only available with X3 shield
+//#define E3_ENABLE_PIN       40  // Only available with X3 shield
+
 #define SDPOWER            -1
 #define SDSS               53
-#define SDCARDDETECT 	    49
+#define SDCARDDETECT 	   -1 // 49
 
-#define LED_PIN            13
-#define FAN_PIN            9
+#define LED_PIN            6
+#define FAN_PIN            5
 #define PS_ON_PIN          12
 #define KILL_PIN           -1
 
-#define HEATER_0_PIN       10
-#define HEATER_1_PIN       8
-#define HEATER_2_PIN       9
-#define TEMP_0_PIN         13   // ANALOG NUMBERING
-#define TEMP_1_PIN         14   // ANALOG NUMBERING
-#define TEMP_2_PIN         15
-#define E0_PINS E0_STEP_PIN,E0_DIR_PIN,E0_ENABLE_PIN,
-#define E1_PINS E1_STEP_PIN,E1_DIR_PIN,E1_ENABLE_PIN,
+#define HEATER_0_PIN       10 //EXT0
+#define HEATER_1_PIN       8 //Bed
+#define HEATER_2_PIN       9 //EXT1
+#define HEATER_3_PIN       16  // EXT2 -- Only available with X3 shield
 
+#define TEMP_0_PIN         13   // EXT0 ANALOG NUMBERING
+#define TEMP_1_PIN         14   // Bed ANALOG NUMBERING
+#define TEMP_2_PIN         15   //EXTR1
+#define TEMP_3_PIN         5  // EXT2 Only available with X3 shield
 
-#else // RAMPS_V_1_1 or RAMPS_V_1_2 as default
+//#define HEATER_4_PIN     17  // Only available with X3 shield
+//#define TEMP_4_PIN       12  // Only available with X3 shield
 
-#define X_STEP_PIN         26
-#define X_DIR_PIN          28
-#define X_ENABLE_PIN       24
-#define X_MIN_PIN           3
-#define X_MAX_PIN          -1    //2
-
-#define Y_STEP_PIN         38
-#define Y_DIR_PIN          40
-#define Y_ENABLE_PIN       36
-#define Y_MIN_PIN          16
-#define Y_MAX_PIN          -1    //17
-
-#define Z_STEP_PIN         44
-#define Z_DIR_PIN          46
-#define Z_ENABLE_PIN       42
-#define Z_MIN_PIN          18
-#define Z_MAX_PIN          -1    //19
-
-#define E0_STEP_PIN         32
-#define E0_DIR_PIN          34
-#define E0_ENABLE_PIN       30
-
-#define SDPOWER            48
-#define SDSS               53
-#define LED_PIN            13
-#define PS_ON_PIN          -1
-#define KILL_PIN           -1
-//#define SCL                21
-//#define SDA                20
 
 #define E0_PINS E0_STEP_PIN,E0_DIR_PIN,E0_ENABLE_PIN,
-#define E1_PINS
+#define E1_PINS E1_STEP_PIN,E1_DIR_PIN,E1_ENABLE_PIN,  // Extruder 2 support
+#define E2_PINS E2_STEP_PIN,E2_DIR_PIN,E2_ENABLE_PIN,  // Extruder 3 support
 
-
-#ifdef RAMPS_V_1_0 // RAMPS_V_1_0
-#define HEATER_0_PIN     12    // RAMPS 1.0
-#define HEATER_1_PIN     -1    // RAMPS 1.0
-#define FAN_PIN          11    // RAMPS 1.0
-
-#else // RAMPS_V_1_1 or RAMPS_V_1_2
-#define HEATER_0_PIN     10    // RAMPS 1.1
-#define HEATER_1_PIN      8    // RAMPS 1.1
-#define FAN_PIN           9    // RAMPS 1.1
-#endif
-
-#define TEMP_0_PIN          2    // MUST USE ANALOG INPUT NUMBERING NOT DIGITAL OUTPUT NUMBERING!!!!!!!!!
-#define TEMP_1_PIN          1    // MUST USE ANALOG INPUT NUMBERING NOT DIGITAL OUTPUT NUMBERING!!!!!!!!!
 #endif
 
 // SPI for Max6675 Thermocouple
@@ -431,16 +398,6 @@ STEPPER_CURRENT_CONTROL
 #define BEEPER_PIN        33  // Activate beeper on extension shield
 #define BEEPER_TYPE        1
 
-#define E2_STEP_PIN         27  // Only available with X3 shield
-#define E2_DIR_PIN          29  // Only available with X3 shield
-#define E2_ENABLE_PIN       41  // Only available with X3 shield
-#define E3_STEP_PIN         23  // Only available with X3 shield
-#define E3_DIR_PIN          25  // Only available with X3 shield
-#define E3_ENABLE_PIN       40  // Only available with X3 shield
-#define HEATER_3_PIN        17  // Only available with X3 shield
-#define TEMP_3_PIN          12  // Only available with X3 shield
-#define HEATER_4_PIN        16  // Only available with X3 shield
-#define TEMP_4_PIN          11  // Only available with X3 shield
 
 #endif
 #endif

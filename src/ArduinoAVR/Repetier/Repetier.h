@@ -22,7 +22,7 @@
 #ifndef _REPETIER_H
 #define _REPETIER_H
 
-#define REPETIER_VERSION "0.90beta"
+#define REPETIER_VERSION "0.90b - CERBERUS MEGA"
 
 // ##########################################################################################
 // ##                                  Debug configuration                                 ##
@@ -35,24 +35,24 @@ to test your data througput or search for communication problems. */
 #define INCLUDE_DEBUG_COMMUNICATION
 /** Allows M111 so set bit 6 (32) which disables moves, at the first tried step. In combination
 with a dry run, you can test the speed of path computations, which are still performed. */
-#define INCLUDE_DEBUG_NO_MOVE
+//#define INCLUDE_DEBUG_NO_MOVE
 /** Writes the free RAM to output, if it is less then at the last test. Should always return
 values >500 for safety, since it doesn't catch every function call. Nice to tweak cache
 usage or for seraching for memory induced errors. Switch it off for production, it costs execution time. */
-//#define DEBUG_FREE_MEMORY
+#define DEBUG_FREE_MEMORY
 //#define DEBUG_ADVANCE
 /** \brief print ops related debug info. */
 //#define DEBUG_OPS
 /** If enabled, writes the created generic table to serial port at startup. */
-//#define DEBUG_GENERIC
+#define DEBUG_GENERIC
 /** If enabled, steps to move and moved steps are compared. */
-//#define DEBUG_STEPCOUNT
+#define DEBUG_STEPCOUNT
 /** This enables code to make M666 drop an ok, so you get problems with communication. It is to test host robustness. */
 #define DEBUG_COM_ERRORS
-//#define DEBUG_DELTA_OVERFLOW
+#define DEBUG_DELTA_OVERFLOW
 
 // Uncomment the following line to enable debugging. You can better control debugging below the following line
-//#define DEBUG
+#define DEBUG
 
 
 // Uncomment if no analyzer is connected
