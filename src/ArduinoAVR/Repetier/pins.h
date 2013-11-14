@@ -356,7 +356,7 @@ STEPPER_CURRENT_CONTROL
 #define SDCARDDETECT 	   -1 // 49
 
 #define LED_PIN            6
-#define FAN_PIN            5
+#define FAN_PIN            4
 #define PS_ON_PIN          12
 #define KILL_PIN           -1
 
