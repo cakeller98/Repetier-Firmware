@@ -856,9 +856,9 @@ on this endstop.
 #define DELTA_ALPHA_C 90
 
 /** Correct radius by this value for each column. Perfect builds have 0 everywhere. */
-#define DELTA_RADIUS_CORRECTION_A -5.0
-#define DELTA_RADIUS_CORRECTION_B -5.0
-#define DELTA_RADIUS_CORRECTION_C -5.0
+#define DELTA_RADIUS_CORRECTION_A 7.0
+#define DELTA_RADIUS_CORRECTION_B 7.0
+#define DELTA_RADIUS_CORRECTION_C 7.0
 
 /** \brief Horizontal offset of the universal joints on the end effector (moving platform).
 */
