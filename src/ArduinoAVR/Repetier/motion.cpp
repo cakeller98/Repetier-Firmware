@@ -1779,10 +1779,10 @@ long PrintLine::bresenhamStep() // Version for delta printer
 #ifdef DEBUG_STEPCOUNT
         if(cur->totalStepsRemaining)
         {
-            out.println_long_P(PSTR("Missed steps:"), cur->totalStepsRemaining);
-            out.println_long_P(PSTR("Step/seg r:"), stepsPerSegRemaining);
-            out.println_int_P(PSTR("NDS:"), (int) cur->numDeltaSegments);
-            out.println_int_P(PSTR("HS:"), (int) cur->halfStep);
+        //    out.println_long_P(PSTR("Missed steps:"), cur->totalStepsRemaining);
+        //    out.println_long_P(PSTR("Step/seg r:"), stepsPerSegRemaining);
+        //    out.println_int_P(PSTR("NDS:"), (int) cur->numDeltaSegments);
+        //    out.println_int_P(PSTR("HS:"), (int) cur->halfStep);
         }
 #endif
         removeCurrentLineForbidInterrupt();
