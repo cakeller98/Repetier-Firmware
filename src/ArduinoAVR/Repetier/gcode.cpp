@@ -205,7 +205,7 @@ void GCode::pushCommand()
     bufferWriteIndex = (bufferWriteIndex+1) % GCODE_BUFFER_SIZE;
     bufferLength++;
 #ifndef ECHO_ON_EXECUTE
-    echoCommand();
+//    echoCommand();
 #endif
 }
 /**
