@@ -46,7 +46,7 @@ usage or for seraching for memory induced errors. Switch it off for production, 
 /** If enabled, writes the created generic table to serial port at startup. */
 #define DEBUG_GENERIC
 /** If enabled, steps to move and moved steps are compared. */
-//#define DEBUG_STEPCOUNT
+#define DEBUG_STEPCOUNT
 /** This enables code to make M666 drop an ok, so you get problems with communication. It is to test host robustness. */
 #define DEBUG_COM_ERRORS
 #define DEBUG_DELTA_OVERFLOW
