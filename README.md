@@ -1,5 +1,11 @@
 # Repetier-Firmware - the fast and user friendly firmware
 
+## Important notice of this CERBERUS MEGA SPECIFIC development version
+
+This repository is intended for specific use with the Cerberus MEGA.  
+
+It is not intended for use by others, the only changes are specific to the Cerberus MEGA.  Therefor if you are not a Cerberus MEGA owner, it is advised that you use Repetier's repository.
+
 ## Important notice of this development version
 
 This development version is under heavy code change. Im reorganizing and refactoring
