@@ -79,14 +79,6 @@ STEPPER_CURRENT_CONTROL
 #define E1_DIR_PIN          34
 #define E1_ENABLE_PIN       30
 
-// ck #define E2_STEP_PIN         27  // Only available with X3 shield
-// ck #define E2_DIR_PIN          29  // Only available with X3 shield
-// ck #define E2_ENABLE_PIN       41  // Only available with X3 shield
-
-// ck //#define E3_STEP_PIN         23  // Only available with X3 shield
-// ck //#define E3_DIR_PIN          25  // Only available with X3 shield
-// ck //#define E3_ENABLE_PIN       40  // Only available with X3 shield
-
 #define SDPOWER            -1
 #define SDSS               53
 #define SDCARDDETECT 	   -1 // ck 49
