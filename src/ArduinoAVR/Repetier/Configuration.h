@@ -275,8 +275,8 @@ The codes are only executed for multiple extruder when changing the extruder. */
 
 
 // =========================== Configuration for second extruder ========================
-#define EXT1_X_OFFSET 0
-#define EXT1_Y_OFFSET -1840
+#define EXT1_X_OFFSET 1800
+#define EXT1_Y_OFFSET 1150
 // for skeinforge 40 and later, steps to pull the plasic 1 mm inside the extruder, not out.  Overridden if EEPROM activated.
 #define EXT1_STEPS_PER_MM 98
 // What type of sensor is used?
@@ -380,8 +380,8 @@ cog. Direct drive extruder need 0. */
 
 
 // =========================== Configuration for third extruder ========================
-#define EXT2_X_OFFSET 1800
-#define EXT2_Y_OFFSET 1150
+#define EXT2_X_OFFSET 0
+#define EXT2_Y_OFFSET -1840
 // for skeinforge 40 and later, steps to pull the plasic 1 mm inside the extruder, not out.  Overridden if EEPROM activated.
 #define EXT2_STEPS_PER_MM 98
 // What type of sensor is used?
@@ -798,7 +798,7 @@ on this endstop.
 // If EEPROM is enabled these values will be overidden with the values in the EEPROM
 #define X_MAX_LENGTH 300
 #define Y_MAX_LENGTH 300
-#define Z_MAX_LENGTH 345.5
+#define Z_MAX_LENGTH 345.8
 
 // Coordinates for the minimum axis. Can also be negative if you want to have the bed start at 0 and the printer can go to the left side
 // of the bed. Maximum coordinate is given by adding the above X_MAX_LENGTH values.
@@ -1201,7 +1201,7 @@ is always running and is not hung up for some unknown reason. */
 #define Z_PROBE_PIN Z_MIN_PIN //63
 #define Z_PROBE_PULLUP true
 #define Z_PROBE_ON_HIGH true
-#define Z_PROBE_X_OFFSET -18.4
+#define Z_PROBE_X_OFFSET 18.4
 #define Z_PROBE_Y_OFFSET 0
 // Waits for a signal to start. Valid signals are probe hit and ok button.
 // This is needful if you have the probe trigger by hand.
