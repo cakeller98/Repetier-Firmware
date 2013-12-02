@@ -46,7 +46,7 @@ To override EEPROM settings with config settings, set EEPROM_MODE 0
 // BASIC SETTINGS: select your board type, thermistor type, axis scaling, and endstop configuration
 
 /** Number of extruders. Maximum 6 extruders. */
-#define NUM_EXTRUDER 3
+#define NUM_EXTRUDER 1
 
 //// The following define selects which electronics board you have. Please choose the one that matches your setup
 // Gen3 PLUS for RepRap Motherboard V1.2 = 21
@@ -686,11 +686,11 @@ A good start is 30 lower then the optimal value. You need to leave room for cool
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define MAXTEMP 260
+#define MAXTEMP 350
 
 /** Extreme values to detect defect thermistors. */
 #define MIN_DEFECT_TEMPERATURE -10
-#define MAX_DEFECT_TEMPERATURE 300
+#define MAX_DEFECT_TEMPERATURE 350
 
 /** \brief Used reference, normally ANALOG_REF_AVCC or ANALOG_REF_AREF for experts ANALOG_REF_INT_2_56 = 2.56V and ANALOG_REF_INT_1_1=1.1V internaly generated */
 #define ANALOG_REF ANALOG_REF_AVCC
